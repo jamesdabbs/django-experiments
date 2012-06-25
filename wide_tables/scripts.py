@@ -1,24 +1,30 @@
-import hotshot, hotshot.stats, os
+import hotshot
+import hotshot.stats
+import os
 
 from wide_tables.models import Small, Medium, Large
 
 
-# We'll repeat each test and average the results to smooth out any noise. This parameter controls the number of
-# repetitions
+# We'll repeat each test and average the results to smooth out any noise. This
+# parameter controls the number of repetitions
 REPS = 1000
 
 
 def profile(func):
-    """ Wraps a function in a hotshot profile and prints the results after the function is run """
+    """ Wraps a function in a hotshot profile and prints the results after the
+        function is run
+    """
     PROFILE_PATH = os.path.join(
         os.path.dirname(os.path.realpath(__file__)),
         'profiles'
     )
+
     def _inner(*args, **kwargs):
         # Start a hotshot profile
         file_path = os.path.join(PROFILE_PATH, '{}.prof'.format(func.__name__))
         profile = hotshot.Profile(file_path)
-        print 'Profiling {} with args={} and kwargs ={} ...'.format(func.__name__, args, kwargs)
+        print 'Profiling {} with args={} and kwargs ={} ...'.format(
+            func.__name__, args, kwargs)
         profile.runcall(func, *args, **kwargs)
         profile.close()
 
@@ -40,19 +46,22 @@ def save_test(model):
 
 @profile
 def retrieve_test(model):
-    """ Retrieves and evaluates a QuerySet containing all objects of the given `model` """
+    """ Retrieves and evaluates a QuerySet containing all objects of the given
+        `model`
+    """
     # Note that calling list() on the queryset forces its evaluation
     list(model.objects.all())
 
 
 @profile
 def select_test(model, columns):
-    """ Retrieves and evaluates a ValuesQuerySet containing all objects of the given `model`, but limited to `columns`
-        many columns
+    """ Retrieves and evaluates a ValuesQuerySet containing all objects of the
+        given `model`, but limited to `columns` many columns
     """
     # Bail out if we're trying to select more columns than there are
     if columns > model.width:
-        print 'Cannot select {} many columns from {}; it only has {}.'.format(columns, model, model.width)
+        print 'Cannot select {} many columns from {}; it only has {}.'.format(
+            columns, model, model.width)
         return
     # Otherwise, retrieve the objects, but limit the values returned
     values = ['col_{}'.format(i) for i in range(0, columns)]
@@ -70,7 +79,8 @@ def update_test(obj):
 def update_fields_test(obj, columns):
     """ Updates the given number of `columns` on the object `obj` """
     if columns > obj.__class__.width:
-        print 'Cannot update {} many columns from {}; it only has {}.'.format(columns, obj, obj.__class__.width)
+        print 'Cannot update {} many columns from {}; it only has {}.'.format(
+            columns, obj, obj.__class__.width)
         return
     update_fields = ['col_{}'.format(i) for i in range(0, columns)]
     for i in range(0, REPS):
@@ -86,9 +96,10 @@ def run_benchmarks():
         model.objects.all().delete()
 
     # Test saving
-    # If you are actually adding this many objects at once (and are using Django 1.4 or later), you should be using
-    # bulk_create. Here, we're interested in the time it takes to save one object and are repeating the test and
-    # averaging to smooth out potential noise.
+    # If you are actually adding this many objects at once (and are using
+    # Django 1.4 or later), you should be using bulk_create. Here, we're
+    # interested in the time it takes to save one object and are repeating the
+    # test and averaging to smooth out potential noise.
     for model in models:
         save_test(model)
 
