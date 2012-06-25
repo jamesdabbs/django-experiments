@@ -50,7 +50,8 @@ def retrieve_test(model):
         `model`
     """
     # Note that calling list() on the queryset forces its evaluation
-    list(model.objects.all())
+    for i in range(0, REPS):
+        list(model.objects.all())
 
 
 @profile
@@ -60,30 +61,31 @@ def select_test(model, columns):
     """
     # Bail out if we're trying to select more columns than there are
     if columns > model.width:
-        print 'Cannot select {} many columns from {}; it only has {}.'.format(
+        print 'Cannot select {} columns from {}; it only has {}.'.format(
             columns, model, model.width)
         return
     # Otherwise, retrieve the objects, but limit the values returned
     values = ['col_{}'.format(i) for i in range(0, columns)]
-    list(model.objects.all().values(*values))
+    for i in range(0, REPS):
+        list(model.objects.all().values(*values))
 
 
 @profile
-def update_test(obj):
+def update_test(model):
     """ Updates the entire object by calling its save method """
-    for i in range(0, REPS):
+    for obj in model.objects.all():
         obj.save()
 
 
 @profile
-def update_fields_test(obj, columns):
+def update_fields_test(model, columns):
     """ Updates the given number of `columns` on the object `obj` """
-    if columns > obj.__class__.width:
-        print 'Cannot update {} many columns from {}; it only has {}.'.format(
-            columns, obj, obj.__class__.width)
+    if columns > model.width:
+        print 'Cannot update {} columns from {}; it only has {}.'.format(
+            columns, model, model.width)
         return
     update_fields = ['col_{}'.format(i) for i in range(0, columns)]
-    for i in range(0, REPS):
+    for obj in model.objects.all():
         obj.save(update_fields=update_fields)
 
 
@@ -112,7 +114,6 @@ def run_benchmarks():
     # Test default update vs. saving using update_fields
     # Note that the `update_fields` argument is new as of Django 1.5
     for model in models:
-        obj = model.objects.all()[0]
-        update_test(obj)
+        update_test(model)
         for i in [10, 100, 1000]:
-            update_fields_test(obj, i)
+            update_fields_test(model, i)
