@@ -1,0 +1,495 @@
+Profiling save_test with args=(<class 'wide_tables.models.Small'>,) and kwargs ={} ...
+Compiling results ...
+         188001 function calls in 23.848 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 63 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   21.404    0.021   21.404    0.021 base.py:232(_commit)
+     1000    1.161    0.001    1.171    0.001 base.py:50(execute)
+     1000    0.160    0.000    0.271    0.000 base.py:282(__init__)
+     1000    0.154    0.000    0.323    0.000 compiler.py:856(as_sql)
+     1000    0.092    0.000   23.547    0.024 base.py:484(save_base)
+     1000    0.072    0.000    1.322    0.001 util.py:38(execute)
+    13000    0.062    0.000    0.062    0.000 operations.py:71(quote_name)
+     1000    0.050    0.000    0.089    0.000 query.py:101(__init__)
+    11000    0.036    0.000    0.099    0.000 __init__.py:380(get_default)
+    10000    0.030    0.000    0.030    0.000 encoding.py:42(is_protected_type)
+
+
+Profiling save_test with args=(<class 'wide_tables.models.Medium'>,) and kwargs ={} ...
+Compiling results ...
+         1178001 function calls in 21.918 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 63 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   15.442    0.015   15.442    0.015 base.py:232(_commit)
+     1000    1.992    0.002    2.004    0.002 base.py:50(execute)
+     1000    0.763    0.001    1.564    0.002 base.py:282(__init__)
+     1000    0.667    0.001    1.895    0.002 compiler.py:856(as_sql)
+   103000    0.297    0.000    0.297    0.000 operations.py:71(quote_name)
+   101000    0.282    0.000    0.794    0.000 __init__.py:380(get_default)
+   100000    0.245    0.000    0.245    0.000 encoding.py:42(is_protected_type)
+   100000    0.208    0.000    0.208    0.000 compiler.py:844(placeholder)
+     1000    0.206    0.000    0.206    0.000 subqueries.py:156(insert_values)
+   101000    0.202    0.000    0.202    0.000 compiler.py:879(<genexpr>)
+
+
+Profiling save_test with args=(<class 'wide_tables.models.Large'>,) and kwargs ={} ...
+Compiling results ...
+         11078001 function calls in 58.224 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 63 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   27.631    0.028   27.631    0.028 base.py:232(_commit)
+     1000   12.485    0.012   12.494    0.012 base.py:50(execute)
+     1000    4.407    0.004    9.745    0.010 base.py:282(__init__)
+     1000    2.048    0.002    6.118    0.006 compiler.py:856(as_sql)
+  1001000    1.791    0.000    5.333    0.000 __init__.py:380(get_default)
+  1000000    1.557    0.000    1.557    0.000 encoding.py:42(is_protected_type)
+  1000000    1.261    0.000    2.819    0.000 encoding.py:55(force_unicode)
+  1003000    1.066    0.000    1.066    0.000 operations.py:71(quote_name)
+     1000    1.008    0.001    1.008    0.001 subqueries.py:156(insert_values)
+  1001000    0.724    0.000    0.724    0.000 __init__.py:374(has_default)
+
+
+Profiling retrieve_test with args=(<class 'wide_tables.models.Small'>,) and kwargs ={} ...
+Compiling results ...
+         9206 function calls in 0.022 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 77 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.010    0.000    0.011    0.000 base.py:282(__init__)
+        1    0.007    0.007    0.007    0.007 base.py:50(execute)
+     1001    0.002    0.000    0.021    0.000 query.py:233(iterator)
+       11    0.001    0.000    0.001    0.000 compiler.py:833(<lambda>)
+        1    0.001    0.001    0.022    0.022 scripts.py:42(retrieve_test)
+     2002    0.000    0.000    0.000    0.000 options.py:216(_fields)
+     2000    0.000    0.000    0.000    0.000 dispatcher.py:143(send)
+     1000    0.000    0.000    0.000    0.000 base.py:271(__init__)
+     1001    0.000    0.000    0.009    0.000 compiler.py:752(results_iter)
+        1    0.000    0.000    0.022    0.022 query.py:79(__len__)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Small'>, 10) and kwargs ={} ...
+Compiling results ...
+         3333 function calls (3324 primitive calls) in 0.012 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 103 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.006    0.006    0.006    0.006 base.py:50(execute)
+     1001    0.003    0.000    0.010    0.000 query.py:949(iterator)
+       11    0.001    0.000    0.001    0.000 compiler.py:833(<lambda>)
+        1    0.000    0.000    0.012    0.012 scripts.py:49(select_test)
+     1001    0.000    0.000    0.000    0.000 query.py:110(_result_iter)
+     1001    0.000    0.000    0.007    0.000 compiler.py:752(results_iter)
+        1    0.000    0.000    0.010    0.010 query.py:79(__len__)
+       10    0.000    0.000    0.000    0.000 query.py:1261(setup_joins)
+     12/4    0.000    0.000    0.000    0.000 copy.py:145(deepcopy)
+        1    0.000    0.000    0.000    0.000 compiler.py:168(get_columns)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Small'>, 100) and kwargs ={} ...
+Cannot select 100 many columns from <class 'wide_tables.models.Small'>; it only has 10.
+Compiling results ...
+         1 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:49(select_test)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Small'>, 1000) and kwargs ={} ...
+Cannot select 1000 many columns from <class 'wide_tables.models.Small'>; it only has 10.
+Compiling results ...
+         1 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:49(select_test)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling retrieve_test with args=(<class 'wide_tables.models.Medium'>,) and kwargs ={} ...
+Compiling results ...
+         9476 function calls in 0.085 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 77 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.051    0.000    0.052    0.000 base.py:282(__init__)
+        1    0.015    0.015    0.015    0.015 base.py:50(execute)
+       11    0.009    0.001    0.009    0.001 compiler.py:833(<lambda>)
+     1001    0.004    0.000    0.082    0.000 query.py:233(iterator)
+        1    0.002    0.002    0.085    0.085 scripts.py:42(retrieve_test)
+     1001    0.001    0.000    0.026    0.000 compiler.py:752(results_iter)
+     2000    0.001    0.000    0.001    0.000 dispatcher.py:143(send)
+     2002    0.000    0.000    0.000    0.000 options.py:216(_fields)
+     1000    0.000    0.000    0.000    0.000 base.py:271(__init__)
+        1    0.000    0.000    0.082    0.082 query.py:79(__len__)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Medium'>, 10) and kwargs ={} ...
+Compiling results ...
+         3344 function calls (3335 primitive calls) in 0.011 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 104 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.006    0.006    0.006    0.006 base.py:50(execute)
+     1001    0.002    0.000    0.010    0.000 query.py:949(iterator)
+       11    0.001    0.000    0.001    0.000 compiler.py:833(<lambda>)
+        1    0.000    0.000    0.011    0.011 scripts.py:49(select_test)
+        1    0.000    0.000    0.000    0.000 options.py:388(_fill_related_objects_cache)
+     1001    0.000    0.000    0.007    0.000 compiler.py:752(results_iter)
+        1    0.000    0.000    0.010    0.010 query.py:79(__len__)
+     1001    0.000    0.000    0.000    0.000 query.py:110(_result_iter)
+       10    0.000    0.000    0.000    0.000 query.py:1261(setup_joins)
+        1    0.000    0.000    0.000    0.000 options.py:334(init_name_map)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Medium'>, 100) and kwargs ={} ...
+Compiling results ...
+         4033 function calls (4024 primitive calls) in 0.054 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 93 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.022    0.022    0.022    0.022 base.py:50(execute)
+     1001    0.016    0.000    0.051    0.000 query.py:949(iterator)
+       11    0.011    0.001    0.011    0.001 compiler.py:833(<lambda>)
+        1    0.002    0.002    0.054    0.054 scripts.py:49(select_test)
+     1001    0.001    0.000    0.035    0.000 compiler.py:752(results_iter)
+      100    0.000    0.000    0.000    0.000 query.py:1261(setup_joins)
+        1    0.000    0.000    0.051    0.051 query.py:79(__len__)
+     1001    0.000    0.000    0.000    0.000 query.py:110(_result_iter)
+        1    0.000    0.000    0.001    0.001 compiler.py:168(get_columns)
+        1    0.000    0.000    0.001    0.001 query.py:1630(add_fields)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Medium'>, 1000) and kwargs ={} ...
+Cannot select 1000 many columns from <class 'wide_tables.models.Medium'>; it only has 100.
+Compiling results ...
+         1 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:49(select_test)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling retrieve_test with args=(<class 'wide_tables.models.Large'>,) and kwargs ={} ...
+Compiling results ...
+         12176 function calls in 0.638 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 77 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.365    0.000    0.366    0.000 base.py:282(__init__)
+        1    0.169    0.169    0.170    0.170 base.py:50(execute)
+       11    0.068    0.006    0.069    0.006 compiler.py:833(<lambda>)
+     1001    0.018    0.000    0.630    0.001 query.py:233(iterator)
+        1    0.008    0.008    0.638    0.638 scripts.py:42(retrieve_test)
+     1001    0.003    0.000    0.245    0.000 compiler.py:752(results_iter)
+        1    0.002    0.002    0.003    0.003 compiler.py:248(get_default_columns)
+     1002    0.001    0.000    0.001    0.000 operations.py:71(quote_name)
+     2000    0.001    0.000    0.001    0.000 dispatcher.py:143(send)
+     1002    0.001    0.000    0.001    0.000 <string>:8(__new__)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Large'>, 10) and kwargs ={} ...
+Compiling results ...
+         3344 function calls (3335 primitive calls) in 0.012 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 104 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.006    0.006    0.006    0.006 base.py:50(execute)
+     1001    0.003    0.000    0.010    0.000 query.py:949(iterator)
+       11    0.001    0.000    0.001    0.000 compiler.py:833(<lambda>)
+        1    0.000    0.000    0.001    0.001 options.py:334(init_name_map)
+        1    0.000    0.000    0.012    0.012 scripts.py:49(select_test)
+     1001    0.000    0.000    0.000    0.000 query.py:110(_result_iter)
+     1001    0.000    0.000    0.008    0.000 compiler.py:752(results_iter)
+        1    0.000    0.000    0.000    0.000 options.py:388(_fill_related_objects_cache)
+        1    0.000    0.000    0.011    0.011 query.py:79(__len__)
+       10    0.000    0.000    0.001    0.000 query.py:1261(setup_joins)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Large'>, 100) and kwargs ={} ...
+Compiling results ...
+         4033 function calls (4024 primitive calls) in 0.047 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 93 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.025    0.025    0.025    0.025 base.py:50(execute)
+     1001    0.011    0.000    0.043    0.000 query.py:949(iterator)
+       11    0.006    0.001    0.006    0.001 compiler.py:833(<lambda>)
+        1    0.002    0.002    0.047    0.047 scripts.py:49(select_test)
+     1001    0.000    0.000    0.033    0.000 compiler.py:752(results_iter)
+      100    0.000    0.000    0.000    0.000 query.py:1261(setup_joins)
+     1001    0.000    0.000    0.000    0.000 query.py:110(_result_iter)
+        1    0.000    0.000    0.001    0.001 compiler.py:168(get_columns)
+        1    0.000    0.000    0.001    0.001 query.py:1630(add_fields)
+        1    0.000    0.000    0.044    0.044 query.py:79(__len__)
+
+
+Profiling select_test with args=(<class 'wide_tables.models.Large'>, 1000) and kwargs ={} ...
+Compiling results ...
+         11233 function calls (11224 primitive calls) in 0.320 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 93 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.163    0.163    0.164    0.164 base.py:50(execute)
+     1001    0.075    0.000    0.306    0.000 query.py:949(iterator)
+       11    0.058    0.005    0.058    0.005 compiler.py:833(<lambda>)
+        1    0.007    0.007    0.320    0.320 scripts.py:49(select_test)
+     1000    0.004    0.000    0.004    0.000 query.py:1261(setup_joins)
+     1001    0.003    0.000    0.231    0.000 compiler.py:752(results_iter)
+        1    0.002    0.002    0.005    0.005 compiler.py:168(get_columns)
+        1    0.002    0.002    0.007    0.007 query.py:1630(add_fields)
+     2001    0.002    0.000    0.003    0.000 compiler.py:37(quote_name_unless_alias)
+     1001    0.001    0.000    0.001    0.000 <string>:8(__new__)
+
+
+Profiling update_test with args=(<Small: Small object>,) and kwargs ={} ...
+Compiling results ...
+         789015 function calls (687015 primitive calls) in 23.001 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 150 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   15.732    0.016   15.732    0.016 base.py:232(_commit)
+     2000    1.794    0.001    1.805    0.001 base.py:50(execute)
+110000/24000    0.903    0.000    1.999    0.000 copy.py:145(deepcopy)
+     6000    0.306    0.000    2.517    0.000 query.py:237(clone)
+   108000    0.299    0.000    0.299    0.000 copy.py:267(_keep_alive)
+    29000    0.251    0.000    0.267    0.000 datastructures.py:108(__init__)
+16000/8000    0.236    0.000    1.036    0.000 copy.py:234(_deepcopy_tuple)
+     1000    0.207    0.000    0.585    0.001 compiler.py:935(as_sql)
+     1000    0.166    0.000   22.984    0.023 base.py:484(save_base)
+    29000    0.139    0.000    0.139    0.000 datastructures.py:103(__new__)
+
+
+Profiling update_fields_test with args=(<Small: Small object>, 10) and kwargs ={} ...
+Compiling results ...
+         417001 function calls (366001 primitive calls) in 20.670 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   16.351    0.016   16.351    0.016 base.py:232(_commit)
+     1000    1.199    0.001    1.199    0.001 base.py:50(execute)
+55000/12000    0.469    0.000    1.046    0.000 copy.py:145(deepcopy)
+     1000    0.217    0.000    0.625    0.001 compiler.py:935(as_sql)
+     3000    0.167    0.000    1.329    0.000 query.py:237(clone)
+    54000    0.159    0.000    0.159    0.000 copy.py:267(_keep_alive)
+     1000    0.141    0.000   20.587    0.021 base.py:484(save_base)
+8000/4000    0.123    0.000    0.542    0.000 copy.py:234(_deepcopy_tuple)
+    12000    0.113    0.000    0.120    0.000 datastructures.py:108(__init__)
+     1000    0.084    0.000    1.363    0.001 util.py:38(execute)
+
+
+Profiling update_fields_test with args=(<Small: Small object>, 100) and kwargs ={} ...
+Cannot update 100 many columns from Small object; it only has 10.
+Compiling results ...
+         2 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:70(update_fields_test)
+        1    0.000    0.000    0.000    0.000 base.py:382(__str__)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling update_fields_test with args=(<Small: Small object>, 1000) and kwargs ={} ...
+Cannot update 1000 many columns from Small object; it only has 10.
+Compiling results ...
+         2 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:70(update_fields_test)
+        1    0.000    0.000    0.000    0.000 base.py:382(__str__)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling update_test with args=(<Medium: Medium object>,) and kwargs ={} ...
+Compiling results ...
+         1419001 function calls (1317001 primitive calls) in 37.550 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 140 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   26.523    0.027   26.523    0.027 base.py:232(_commit)
+     2000    2.680    0.001    2.691    0.001 base.py:50(execute)
+     1000    1.394    0.001    3.066    0.003 compiler.py:935(as_sql)
+110000/24000    0.874    0.000    1.946    0.000 copy.py:145(deepcopy)
+   106000    0.506    0.000    1.019    0.000 compiler.py:37(quote_name_unless_alias)
+   105000    0.438    0.000    0.438    0.000 operations.py:71(quote_name)
+     1000    0.360    0.000   37.517    0.038 base.py:484(save_base)
+     6000    0.299    0.000    2.454    0.000 query.py:237(clone)
+   108000    0.293    0.000    0.293    0.000 copy.py:267(_keep_alive)
+    29000    0.250    0.000    0.265    0.000 datastructures.py:108(__init__)
+
+
+Profiling update_fields_test with args=(<Medium: Medium object>, 10) and kwargs ={} ...
+Compiling results ...
+         417001 function calls (366001 primitive calls) in 21.430 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   16.858    0.017   16.858    0.017 base.py:232(_commit)
+     1000    1.403    0.001    1.403    0.001 base.py:50(execute)
+55000/12000    0.453    0.000    1.006    0.000 copy.py:145(deepcopy)
+     1000    0.210    0.000    0.621    0.001 compiler.py:935(as_sql)
+     1000    0.185    0.000   21.265    0.021 base.py:484(save_base)
+     3000    0.161    0.000    1.279    0.000 query.py:237(clone)
+    54000    0.150    0.000    0.150    0.000 copy.py:267(_keep_alive)
+     1000    0.148    0.000   21.415    0.021 base.py:450(save)
+8000/4000    0.119    0.000    0.522    0.000 copy.py:234(_deepcopy_tuple)
+    12000    0.108    0.000    0.115    0.000 datastructures.py:108(__init__)
+
+
+Profiling update_fields_test with args=(<Medium: Medium object>, 100) and kwargs ={} ...
+Compiling results ...
+         1047001 function calls (996001 primitive calls) in 29.183 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   22.352    0.022   22.352    0.022 base.py:232(_commit)
+     1000    1.720    0.002    1.720    0.002 base.py:50(execute)
+     1000    1.197    0.001    2.582    0.003 compiler.py:935(as_sql)
+   103000    0.421    0.000    0.855    0.000 compiler.py:37(quote_name_unless_alias)
+55000/12000    0.383    0.000    0.853    0.000 copy.py:145(deepcopy)
+   102000    0.357    0.000    0.357    0.000 operations.py:71(quote_name)
+     1000    0.273    0.000   29.004    0.029 base.py:484(save_base)
+     1000    0.162    0.000   29.168    0.029 base.py:450(save)
+     3000    0.136    0.000    1.084    0.000 query.py:237(clone)
+   100000    0.129    0.000    0.353    0.000 __init__.py:294(get_db_prep_save)
+
+
+Profiling update_fields_test with args=(<Medium: Medium object>, 1000) and kwargs ={} ...
+Cannot update 1000 many columns from Medium object; it only has 100.
+Compiling results ...
+         2 function calls in 0.000 seconds
+
+   Ordered by: internal time, call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 scripts.py:70(update_fields_test)
+        1    0.000    0.000    0.000    0.000 base.py:382(__str__)
+        0    0.000             0.000          profile:0(profiler)
+
+
+Profiling update_test with args=(<Large: Large object>,) and kwargs ={} ...
+Compiling results ...
+         7719001 function calls (7617001 primitive calls) in 56.681 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 140 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   24.499    0.024   24.499    0.024 base.py:232(_commit)
+     2000   12.800    0.006   12.809    0.006 base.py:50(execute)
+     1000    6.150    0.006   12.710    0.013 compiler.py:935(as_sql)
+  1006000    2.053    0.000    4.257    0.000 compiler.py:37(quote_name_unless_alias)
+  1005000    1.823    0.000    1.823    0.000 operations.py:71(quote_name)
+     1000    1.522    0.002   56.613    0.057 base.py:484(save_base)
+  1000000    0.926    0.000    2.099    0.000 __init__.py:294(get_db_prep_save)
+  1000000    0.881    0.000    0.881    0.000 __init__.py:271(pre_save)
+  1000000    0.666    0.000    1.173    0.000 __init__.py:283(get_db_prep_value)
+110000/24000    0.591    0.000    1.361    0.000 copy.py:145(deepcopy)
+
+
+Profiling update_fields_test with args=(<Large: Large object>, 10) and kwargs ={} ...
+Compiling results ...
+         417001 function calls (366001 primitive calls) in 23.213 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   13.668    0.014   13.668    0.014 base.py:232(_commit)
+     1000    4.713    0.005    4.713    0.005 base.py:50(execute)
+     1000    0.876    0.001   23.169    0.023 base.py:450(save)
+     1000    0.727    0.001   22.291    0.022 base.py:484(save_base)
+55000/12000    0.471    0.000    1.074    0.000 copy.py:145(deepcopy)
+     1000    0.217    0.000    0.800    0.001 compiler.py:935(as_sql)
+     1000    0.184    0.000    0.186    0.000 query.py:924(setup_inherited_models)
+     3000    0.169    0.000    1.361    0.000 query.py:237(clone)
+    54000    0.156    0.000    0.156    0.000 copy.py:267(_keep_alive)
+8000/4000    0.125    0.000    0.565    0.000 copy.py:234(_deepcopy_tuple)
+
+
+Profiling update_fields_test with args=(<Large: Large object>, 100) and kwargs ={} ...
+Compiling results ...
+         1047001 function calls (996001 primitive calls) in 23.414 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   10.884    0.011   10.884    0.011 base.py:232(_commit)
+     1000    5.142    0.005    5.142    0.005 base.py:50(execute)
+     1000    1.403    0.001    3.150    0.003 compiler.py:935(as_sql)
+     1000    0.871    0.001   23.369    0.023 base.py:450(save)
+     1000    0.815    0.001   22.496    0.022 base.py:484(save_base)
+   103000    0.489    0.000    0.987    0.000 compiler.py:37(quote_name_unless_alias)
+55000/12000    0.450    0.000    1.021    0.000 copy.py:145(deepcopy)
+   102000    0.410    0.000    0.410    0.000 operations.py:71(quote_name)
+     1000    0.175    0.000    0.177    0.000 query.py:924(setup_inherited_models)
+     3000    0.161    0.000    1.292    0.000 query.py:237(clone)
+
+
+Profiling update_fields_test with args=(<Large: Large object>, 1000) and kwargs ={} ...
+Compiling results ...
+         7347001 function calls (7296001 primitive calls) in 43.267 seconds
+
+   Ordered by: internal time, call count
+   List reduced from 123 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000   13.950    0.014   13.950    0.014 base.py:50(execute)
+     1000    9.985    0.010    9.985    0.010 base.py:232(_commit)
+     1000    6.416    0.006   13.529    0.014 compiler.py:935(as_sql)
+  1003000    2.236    0.000    4.535    0.000 compiler.py:37(quote_name_unless_alias)
+  1002000    1.883    0.000    1.883    0.000 operations.py:71(quote_name)
+     1000    1.464    0.001   42.450    0.042 base.py:484(save_base)
+  1000000    0.894    0.000    0.894    0.000 __init__.py:983(get_prep_value)
+  1000000    0.890    0.000    0.890    0.000 __init__.py:271(pre_save)
+     1000    0.774    0.001   43.225    0.043 base.py:450(save)
+  1000000    0.742    0.000    2.349    0.000 __init__.py:294(get_db_prep_save)
+
+
